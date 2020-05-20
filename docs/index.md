@@ -23,7 +23,7 @@
 
 * 本部分教程的作用是
 
-* [Premiere 软件](develop_unity3d.md)
+* [Unity3D 插件](develop_unity3d.md)
 
 ### H5插件
 

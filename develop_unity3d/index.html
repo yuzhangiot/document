@@ -120,8 +120,7 @@
 
 <h1 id="unity3d">Unity3D 插件使用教程</h1>
 <h2 id="_1">简介</h2>
-<pre><code>unityMeshPlayer提供简单高效的体积视频解码，开发者可以利用unityMeshPlayer在Unity3d中进行体积视频的解码预览与二次开发，
-</code></pre>
+<p>unityMeshPlayer提供简单高效的体积视频解码，开发者可以利用unityMeshPlayer在Unity3d中进行体积视频的解码预览与二次开发，</p>
 <h2 id="_2">主要特性</h2>
 <ul>
 <li>提供录播和实时直播的高性能解码能力</li>
@@ -197,15 +196,18 @@
 └─StreamingAssets 在Unity工程中的视频文件要放在这里进行播放
 </code></pre>
 <h2 id="_6">快速入门</h2>
-<p>将PromethCube拖进场景，将组件中的SourceType选择为PLAYBACK，SourcePAth填入StreamingAssets文件夹下的路径，记得加上后缀，在StreamingAssets下文路径要勾选InStreamingAssets属性，编辑器下可以点击PreviewFrame进度条进行预览，SourceDurationSec，是当前模型的总时长，SpeedRatio为模型的播放速度。</p>
+<p><img alt="image" src="../imgs/U3D/00.png" /><br />
+将PromethCube拖进场景，将组件中的SourceType选择为PLAYBACK，SourcePAth填入StreamingAssets文件夹下的路径，记得加上后缀，在StreamingAssets下文路径要勾选InStreamingAssets属性，编辑器下可以点击PreviewFrame进度条进行预览，SourceDurationSec，是当前模型的总时长，SpeedRatio为模型的播放速度。</p>
 <h2 id="api">API控制</h2>
-<p>MeshPlayerPlugin暴露出一些接口可以对视频播放进行控制
-* MeshPlayerPlugin.OpenSource(string str)  // 打开文件，参数为地址，StreamingAssets文件夹下的路径，否则为绝对路径
-* MeshPlayerPlugin.Play()  // 播放
-* MeshPlayerPlugin.Pause()  // 暂停
-* MeshPlayerPlugin.SetMaterial(Material mat)  // 切换材质
-* MeshPlayerPlugin.GotoSecond(float sec)  // 跳到多少秒
-* MeshPlayerPlugin.SpeedRatio //控制速度，播放前生效</p></div>
+<p>MeshPlayerPlugin暴露出一些接口可以对视频播放进行控制</p>
+<ul>
+<li>MeshPlayerPlugin.OpenSource(string str)  打开文件，参数为地址，StreamingAssets文件夹下的路径，否则为绝对路径</li>
+<li>MeshPlayerPlugin.Play()  // 播放</li>
+<li>MeshPlayerPlugin.Pause()  // 暂停</li>
+<li>MeshPlayerPlugin.SetMaterial(Material mat)  // 切换材质</li>
+<li>MeshPlayerPlugin.GotoSecond(float sec)  // 跳到多少秒</li>
+<li>MeshPlayerPlugin.SpeedRatio //控制速度，播放前生效</li>
+</ul></div>
             </div>
         </div>
 

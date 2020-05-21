@@ -2,7 +2,7 @@
 
 ## 简介
 
-    unityMeshPlayer提供简单高效的体积视频解码，开发者可以利用unityMeshPlayer在Unity3d中进行体积视频的解码预览与二次开发，
+unityMeshPlayer提供简单高效的体积视频解码，开发者可以利用unityMeshPlayer在Unity3d中进行体积视频的解码预览与二次开发，
 
 ## 主要特性
 
@@ -79,11 +79,13 @@
     └─StreamingAssets 在Unity工程中的视频文件要放在这里进行播放
 
 ## 快速入门
+![image](imgs/U3D/00.png)  
 将PromethCube拖进场景，将组件中的SourceType选择为PLAYBACK，SourcePAth填入StreamingAssets文件夹下的路径，记得加上后缀，在StreamingAssets下文路径要勾选InStreamingAssets属性，编辑器下可以点击PreviewFrame进度条进行预览，SourceDurationSec，是当前模型的总时长，SpeedRatio为模型的播放速度。
 
 ## API控制
 MeshPlayerPlugin暴露出一些接口可以对视频播放进行控制
-* MeshPlayerPlugin.OpenSource(string str)  // 打开文件，参数为地址，StreamingAssets文件夹下的路径，否则为绝对路径
+
+* MeshPlayerPlugin.OpenSource(string str)  打开文件，参数为地址，StreamingAssets文件夹下的路径，否则为绝对路径
 * MeshPlayerPlugin.Play()  // 播放
 * MeshPlayerPlugin.Pause()  // 暂停
 * MeshPlayerPlugin.SetMaterial(Material mat)  // 切换材质

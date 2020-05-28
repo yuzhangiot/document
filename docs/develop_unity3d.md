@@ -89,3 +89,6 @@ MeshPlayerPlugin暴露出一些接口可以对视频播放进行控制
 * MeshPlayerPlugin.SetMaterial(Material mat)  // 切换材质
 * MeshPlayerPlugin.GotoSecond(float sec)  // 跳到多少秒
 * MeshPlayerPlugin.SpeedRatio //控制速度，播放前生效
+
+## 演示视频
+[![Unity3D Demo Video](imgs/07.png)](https://www.bilibili.com/video/BV1Dt4y1C7Qs)

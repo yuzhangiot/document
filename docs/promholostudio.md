@@ -4,10 +4,10 @@
 
 PromHoloStudio软件是由深圳普罗米修斯视觉技术有限公司开发的软件系统，用户结合配套提供的全息容积视频拍摄影棚，可以方便的进行人体容积视频的本地采集、后续编辑以及实时在线直播等相关操作。
 
-## PromHoloStudio功能模块
+##<span id = "id_promholostudio">PromHoloStudio功能模块</span>
 
-* [设备调整](#promholostudio_deviceSetting)
-* [设备标定](#DeviceCalib)
+* [设备调整](page_deviceSetting.md#id_page_deviceSetting)
+* [设备标定](page_deviceCalib.md#page_deviceCalib)
 * [Holo录播](#HoloCapture)
 * [录播编辑](#HoloEdit)
 * [Holo直播](#HoloLive)（可选）
@@ -28,20 +28,15 @@ PromHoloStudio软件是由深圳普罗米修斯视觉技术有限公司开发的
 
 ## 开始使用
 
-新用户初次使用本软件时将按照 [设备调整](#promholostudio_deviceSetting) > [设备标定](#DeviceCalib) 的流程完成基本的系统初始化工作，待 [设备标定](#DeviceCalib) 完成后，用户可以使用 [Holo录播](#HoloCapture) 模块进行人体容积视频的本地采集，然后使用 [录播编辑](#HoloEdit) 模块完成人体容积视频的预览、编辑和导出。购买了 [Holo直播](#HoloLive) 模块的用户还可以直接在该模块当中进行人体容积视频的实时在线直播。
+新用户初次使用本软件时将按照 [设备调整](page_deviceSetting.md#id_page_deviceSetting) > [设备标定](page_deviceCalib.md#id_page_deviceCalib) 的流程完成基本的系统初始化工作，待 [设备标定](page_deviceCalib.md#id_page_deviceCalib) 完成后，用户可以使用 [Holo录播](#HoloCapture) 模块进行人体容积视频的本地采集，然后使用 [录播编辑](#HoloEdit) 模块完成人体容积视频的预览、编辑和导出。购买了 [Holo直播](#HoloLive) 模块的用户还可以直接在该模块当中进行人体容积视频的实时在线直播。
 
-###<span id = "promholostudio_deviceSetting">设备调整</span>
-* [前往 设备调整 介绍页](page_deviceSetting.md#page_deviceSetting)
+* [前往 设备调整 介绍页](page_deviceSetting.md#id_page_deviceSetting)
 
-###<span id = "DeviceCalib">设备标定</span>
-#### 功能介绍
-#### 操作指南
+####<span id = "promholostudio_deviceCalib">设备标定</span>
+* [前往 设备标定 介绍页](page_deviceCalib.md#page_deviceCalib)
+
 ###<span id = "HoloCapture">Holo录播</span>
-#### 功能介绍
-#### 操作指南
+
 ###<span id = "HoloEdit">录播编辑</span>
-#### 功能介绍
-#### 操作指南
+
 ###<span id = "HoloLive">Holo直播</span>
-#### 功能介绍
-#### 操作指南

@@ -12,19 +12,19 @@
 ![image](imgs/PromHoloStudio/page_deviceSetting/img_devicesetting2_temp.png)
 
 ###<span id = "DeviceSetting_SettingArea">参数设置区</span>
-参数设置区将对当前接入系统的相机设备进行相关参数的调整。
+参数设置区将引导用户对当前接入系统的相机设备进行相关参数的调整。具体操作流程如下：
 
-#### 刷新设备
+#### 1.刷新设备
 ![image](imgs/PromHoloStudio/page_deviceSetting/img_devicesetting3_temp.png)
 用户点击刷新设备按钮将刷新当前已接入系统的相机设备信息，并在按钮左边向用户展示其接入数量。刷新设备操作将核对当前接入系统的相机设备授权信息，对于非法授权的相机设备将不予以支持，具体请参考[相机授权](promholostudio.md#CameraLicense)部分的描述。
 *注意：有可能因设备连接不良而导致某些相机设备刷新不出或者刷新失败，此时用户需根据软件的反馈检查相机设备的连接情况，尝试重新拔插设备并再次刷新。*
 
-####<span id = "DeviceSetting_OpenOrCloseCamera">打开相机/关闭相机</span>
+####<span id = "DeviceSetting_OpenOrCloseCamera">2.打开/关闭相机</span>
 ![image](imgs/PromHoloStudio/img_openDevice_temp.png) / ![image](imgs/PromHoloStudio/img_closeDevice_temp.png)
 用户在成功刷新设备后，点击“打开相机”按钮将打开所有接入系统的相机设备；成功打开相机后，用户可以再次点击该按钮（此时该按钮显示“关闭相机”字样）关闭所有的相机设备。
 *注意：有可能因设备连接不良而导致某些相机设备无法打开，此时用户需根据软件的反馈检查相机设备的连接情况，尝试重新拔插设备并再次刷新、打开相机。*
 
-#### 设备信息列表
+#### 3.参数设置
 ![image](imgs/PromHoloStudio/page_deviceSetting/img_devicesetting6_temp.png)
 用户在成功刷新设备后，即可在下方显示当前接入系统的相机设备信息列表。列表详细列举了当前相机设备的各类参数，并提供了相应的表格控件以便用户进行相应的设置和修改。用户可以使用表头提供的控件如下拉框等，一次性修改所有相机的对应参数，也可以在表体当中选定某台相机设备，使用表体控件来单独调整某台相机的具体参数。（被选中的相机在列表中高亮显示，如果此时相机已打开，则会同步在[视频预览区](#DeviceSetting_PreviewArea)显示对应的相机画面预览）
 *注意：除了[主相机](#id_page_deviceSetting_mainCamera)选择以及[相机名称](#id_page_deviceSetting_cameraName)这两个设定需要在表体中单独对每台相机进行调整设置之外，其余参数一般推荐使用表头控件统一调整，使得每台相机的对应参数保持一致，这样可以更好的保证系统的拍摄质量。*

@@ -10,10 +10,10 @@
 ###<span id = "deviceSetting_previewArea">视频预览区</span>
 视频预览区采用类似九宫格的矩阵排列方式，显示当前所有接入系统相机的视频画面预览。每台相机在各自画幅上均按照左边彩色图右边深度图的方式予以布局，彩色图/深度图上方将显示该相机的相机名称-图像类型后缀（例如：相机00的彩色图为00-color，对应的深度图为00-depth），而如果该相机是主相机的话，则会在相机名称前冠以[main]字样（例如：相机00为主相机，其彩色图为[main]00-color，对应的深度图为[main]00-depth）。
 
-![image](imgs/PromHoloStudio/page_deviceCalib/img_deviceCalib_temp2.png)
+![image](imgs/PromHoloStudio/img_videoPreview_temp.png)
 
 ###<span id = "deviceSetting_pointcloudArea">点云预览区</span>
-点云预览区将对标定完成后的人体点云模型予以显示和预览。用户可以通过鼠标或键盘操控点云模型的观察视角，依据其与真实人体的贴合程度直观上大致判断标定结果的好坏。
+点云预览区将对标定完成后的人体点云模型予以显示和预览。用户可以通过鼠标或键盘对点云模型的观察视角进行操控，依据其与真实人体的贴合程度直观上大致判断标定结果的好坏。
 
 **支持的鼠标/键盘操作**：
 * 鼠标滚轮：视角缩放。
@@ -21,7 +21,7 @@
 * 鼠标中键拖拽：视角平移。
 * 键盘R键：视角重置。
 
-![image](imgs/PromHoloStudio/page_deviceCalib/img_deviceCalib_temp3.png)
+![image](imgs/PromHoloStudio/img_pointcloudPreview_temp.png)
 <!-- <img src="imgs/PromHoloStudio/page_deviceCalib/img_deviceCalib_temp3.png" width="50%"> -->
 
 ###<span id = "deviceSetting_calibArea">标定操作区</span>
@@ -44,9 +44,9 @@
 
 用户在设定好标定根目录并且成功打开相机之后，需要按照系统提示，结合全息容积影棚配套的标定架依次拍摄指定张数的标定素材照片。拍摄顺序如下：
 
-1. 用户进入影棚正中央，正面面朝[主相机](page_deviceSetting.md#id_page_deviceSetting_mainCamera)，双手双脚自然朝身子两侧稍稍打开，身体摆呈字母A样式垂直站立不动。另一位操作员用户点击标定操作区的拍摄按钮，拍摄第一张标定素材“人形参考”。
+1. 用户进入影棚正中央，正面面朝[主相机](page_deviceSetting.md#id_page_deviceSetting_mainCamera)，双手双脚自然朝身子两侧稍稍打开，身体摆呈字母A样式垂直站立不动。另一位操作员用户点击标定操作区的白色圆形拍摄按钮，拍摄第一张标定素材“人形参考”。
 
-2. 将全息容积影棚配套的标定架摆入影棚正中央，标定架正面（也即棋盘格标定板正面）正对[主相机](page_deviceSetting.md#id_page_deviceSetting_mainCamera)并以此角度作为“0°”参考。操作员用户点击标定操作区的拍摄按钮，拍摄“0°”标定架素材；拍摄完成后，将标定架以相对于上一次标定架摆设角度顺时针旋转45度，再次拍摄一组标定架素材，以此类推，直到将标定架旋转一周为止，一共拍摄8组不同角度的标定架素材。
+2. 将全息容积影棚配套的标定架摆入影棚正中央，标定架正面（也即棋盘格标定板正面）正对[主相机](page_deviceSetting.md#id_page_deviceSetting_mainCamera)并以此角度作为“0°”参考。操作员用户点击标定操作区的白色圆形拍摄按钮，拍摄“0°”标定架素材；拍摄完成后，将标定架以相对于上一次标定架摆设角度顺时针旋转45度，再次拍摄一组标定架素材，以此类推，直到将标定架旋转一周为止，一共拍摄8组不同角度的标定架素材。
 
 *注意：“人形参考”以及8组标定架拍摄角度未完成拍摄之前，标定操作区的拍摄提示将显示“未拍摄”字样，每完成一组拍摄后对应的拍摄提示将变更为“已拍摄”。点击标定操作区的“Reset”按钮将清空当前标定根目录下的所有文件，方便用户重新拍摄标定素材。*
 

@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>H5 插件使用教程 - 普罗米修斯视觉用户手册</title>
+        <title>page deviceCalib - 普罗米修斯视觉用户手册</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -36,8 +36,8 @@
                             <li class="navitem">
                                 <a href=".." class="nav-link">Prometheus Vision 系列教程</a>
                             </li>
-                            <li class="navitem active">
-                                <a href="./" class="nav-link">H5 插件使用教程</a>
+                            <li class="navitem">
+                                <a href="../develop_h5/" class="nav-link">H5 插件使用教程</a>
                             </li>
                             <li class="navitem">
                                 <a href="../develop_unity3d/" class="nav-link">Unity3D 插件使用教程</a>
@@ -45,8 +45,8 @@
                             <li class="navitem">
                                 <a href="../page_capture/" class="nav-link">Page capture</a>
                             </li>
-                            <li class="navitem">
-                                <a href="../page_deviceCalib/" class="nav-link">page deviceCalib</a>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">page deviceCalib</a>
                             </li>
                             <li class="navitem">
                                 <a href="../page_deviceSetting/" class="nav-link">page deviceSetting</a>
@@ -69,12 +69,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href=".." class="nav-link">
+                                <a rel="prev" href="../page_capture/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../develop_unity3d/" class="nav-link">
+                                <a rel="next" href="../page_deviceSetting/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -96,17 +96,13 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#h5" class="nav-link">H5 插件使用教程</a>
+            <li class="nav-item" data-level="1"><a href="#_1" class="nav-link">设备标定</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#sdk" class="nav-link">SDK简介</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">开发注意事项</a>
+            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">功能介绍</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#sdk_1" class="nav-link">SDK接入快速入门</a>
+            <li class="nav-item" data-level="2"><a href="#_3" class="nav-link">操作指南</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -117,84 +113,50 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="h5">H5 插件使用教程</h1>
-<h2 id="sdk">SDK简介</h2>
-<p>本部分教程的作用是介绍在H5开发环境下，使用PromethH5SDK（以下简称SDK）制作运行在浏览器上的H5页面。<br />
-SDK主要提供：容积视频解码,三维物体渲染,GLTF三维模型加载,屏幕交互支持等功能。</p>
-<p><img alt="image" src="../imgs/H5/00.png" />  <br />
-图1.1 SDK plugin目录结构  <br />
-* Broadway、Mp4Draco包含的是容积视频解码相关的功能.
-* OrbitControls.js包含屏幕交互支持功能.
-* three.module.js包含渲染三维内容功能.
-* GLTFLoader.js包含加载三维模型功能.</p>
-<h2 id="_1">开发注意事项</h2>
-<h3 id="_2">三维模型的渲染</h3>
-<ul>
-<li>初始化three.js的渲染参数,尤其注意场景相机与三维模型的position设置以及三维模型的scale设置.</li>
-</ul>
-<h2 id="sdk_1">SDK接入快速入门</h2>
-<h3 id="sdk_2">导入SDK</h3>
-<pre><code class="js"></code></pre>
-
-<h3 id="_3">准备渲染三维物体</h3>
-<pre><code class="js">import * as THREE from &quot;./three.module.js&quot; 
-</code></pre>
-
-<p>引用three.js</p>
-<pre><code class="js">scene = new THREE.Scene
-var ambientLight = new THREE.AmbientLight(0xffffff,1)
-scene.add(ambientLight)
-</code></pre>
-
-<p>初始化three.js</p>
-<h3 id="_4">解码容积视频</h3>
-<pre><code class="js">    &lt;script src=&quot;Broadway/mp4.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;Broadway/Decoder.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;Broadway/YUVCanvas.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;Broadway/Player.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;Broadway/stream.js&quot;&gt;&lt;/script&gt;
-</code></pre>
-
-<p>引用Broadway</p>
-<pre><code class="js"> import { MeshQueue, Mp4MeshLoader } from './Mp4Draco/Mp4MeshLoader.js'
-</code></pre>
-
-<p>引用Mp4Draco</p>
-<pre><code class="js"> g_meshQueue = new MeshQueue()
- g_meshQueue.load(url, function () {
-     scene.add(g_meshQueue.root)
-     }, onProgress, onError)
-</code></pre>
-
-<p>解码ur</p>
-<h3 id="_5">设置交互支持</h3>
-<pre><code class="js">import { OrbitControls } from './OrbitControls.js'
-</code></pre>
-
-<p>引用OrbitControls.js</p>
-<pre><code class="js">controls = new OrbitControls(camera, renderer.domElement)
-</code></pre>
-
-<p>初始化OrbitControls.js</p>
-<h3 id="_6">渲染</h3>
-<pre><code class="js">renderer.render(scene, camera)
-controls.update()// only required if controls.enableDamping = true, or if controls.autoRotate = true
-</code></pre>
-
-<p>每帧渲染</p>
-<h3 id="_7">加载其他三维模型(可选)</h3>
-<pre><code class="js">import { GLTFLoader } from &quot;./GLTFLoader.js&quot;
-</code></pre>
-
-<p>引用GLTFLoader.js</p>
-<pre><code class="js">var gltf = new GLTFLoader()
-gltf.load('https://prometh-test.oss-cn-shenzhen.aliyuncs.com/dev/2019/ClothesDemo/SceneModel/scene.gltf',function (gltf) {
-    scene.add(gltf.scene)
-    },
-    null,onError)
-</code></pre>
-
-<p>初始化GLTFLoader.js</p></div>
+<p><a href="../promholostudio/#id_promholostudio">返回</a></p>
+<h1 id="_1"><span id = "id_page_deviceCalib">设备标定</span></h1>
+<h2 id="_2">功能介绍</h2>
+<p>设备标定模块需要使用与全息容积拍摄影棚相配套的标定架，结合系统程序的标定算法完成影棚相机阵列的相机标定工作。该环节处理结果的好坏将直接影响人体容积视频的呈现质量。界面上分为左边的<a href="#deviceSetting_previewArea">视频预览区</a>、左上方的<a href="#deviceSetting_pointcloudArea">点云预览区</a>和左下方的<a href="#deviceSetting_calibArea">标定操作区</a></p>
+<p><img alt="image" src="../imgs/PromHoloStudio/page_deviceCalib/img_deviceCalib_temp.png" /></p>
+<h2 id="_3">操作指南</h2>
+<h3 id="_4"><span id = "deviceSetting_previewArea">视频预览区</span></h3>
+<p>视频预览区采用类似九宫格的矩阵排列方式，显示当前所有接入系统相机的视频画面预览。每台相机在各自画幅上均按照左边彩色图右边深度图的方式予以布局，彩色图/深度图上方将显示该相机的相机名称-图像类型后缀（例如：相机00的彩色图为00-color，对应的深度图为00-depth），而如果该相机是主相机的话，则会在相机名称前冠以[main]字样（例如：相机00为主相机，其彩色图为[main]00-color，对应的深度图为[main]00-depth）。</p>
+<p><img alt="image" src="../imgs/PromHoloStudio/page_deviceCalib/img_deviceCalib_temp2.png" /></p>
+<h3 id="_5"><span id = "deviceSetting_pointcloudArea">点云预览区</span></h3>
+<p>点云预览区将对标定完成后的人体点云模型予以显示和预览。用户可以通过鼠标或键盘操控点云模型的观察视角，依据其与真实人体的贴合程度直观上大致判断标定结果的好坏。</p>
+<p><strong>支持的鼠标/键盘操作</strong>：
+* 鼠标滚轮：视角缩放。
+* 鼠标左键拖拽：视角旋转。
+* 鼠标中键拖拽：视角平移。
+* 键盘R键：视角重置。</p>
+<p><img alt="image" src="../imgs/PromHoloStudio/page_deviceCalib/img_deviceCalib_temp3.png" />
+<!-- <img src="imgs/PromHoloStudio/page_deviceCalib/img_deviceCalib_temp3.png" width="50%"> --></p>
+<h3 id="_6"><span id = "deviceSetting_calibArea">标定操作区</span></h3>
+<p>标定操作区负责引导用户完成影棚相机阵列的相机标定工作。具体操作流程如下：</p>
+<h4 id="1">1.指定标定根目录</h4>
+<p><img alt="image" src="../imgs/PromHoloStudio/page_deviceCalib/img_deviceCalib_temp4.png" /></p>
+<p>用户在文本框当中输入标定任务的根目录路径（也可点击“浏览”按钮，在弹出的路径选择弹窗中选择指定该路径），该目录将存储标定所需的素材照片以及标定算法生成的各种中间文件。
+<em>注意：当从其他功能模块跳转到设备标定模块时，将弹出标定根目录的设定弹窗，用户也可以在该弹窗当中先行设定该目录路径。</em>
+<img alt="image" src="../imgs/PromHoloStudio/page_deviceCalib/img_deviceCalib_temp5.png" /></p>
+<h4 id="2">2.打开/关闭相机</h4>
+<p><img alt="image" src="../imgs/PromHoloStudio/img_openDevice_temp.png" /> / <img alt="image" src="../imgs/PromHoloStudio/img_closeDevice_temp.png" />
+用户点击“打开相机”按钮，将刷新、打开所有接入系统的相机设备（该操作将核对当前接入系统的相机设备授权信息，对于非法授权的相机设备将不予以支持，具体请参考<a href="../promholostudio/#CameraLicense">相机授权</a>部分的描述）；成功打开相机后，用户可以再次点击该按钮（此时该按钮显示“关闭相机”字样）关闭所有的相机设备。
+<em>注意：有可能因设备连接不良而导致某些相机设备无法刷新/打开，此时用户需根据软件的反馈检查相机设备的连接情况，尝试重新拔插设备并再次刷新、打开相机。</em></p>
+<h4 id="3">3.拍摄标定素材</h4>
+<p><img alt="image" src="../imgs/PromHoloStudio/page_deviceCalib/img_deviceCalib_temp6.png" /></p>
+<p>用户在设定好标定根目录并且成功打开相机之后，需要按照系统提示，结合全息容积影棚配套的标定架依次拍摄指定张数的标定素材照片。拍摄顺序如下：</p>
+<ol>
+<li>
+<p>用户进入影棚正中央，正面面朝<a href="../page_deviceSetting/#id_page_deviceSetting_mainCamera">主相机</a>，双手双脚自然朝身子两侧稍稍打开，身体摆呈字母A样式垂直站立不动。另一位操作员用户点击标定操作区的拍摄按钮，拍摄第一张标定素材“人形参考”。</p>
+</li>
+<li>
+<p>将全息容积影棚配套的标定架摆入影棚正中央，标定架正面（也即棋盘格标定板正面）正对<a href="../page_deviceSetting/#id_page_deviceSetting_mainCamera">主相机</a>并以此角度作为“0°”参考。操作员用户点击标定操作区的拍摄按钮，拍摄“0°”标定架素材；拍摄完成后，将标定架以相对于上一次标定架摆设角度顺时针旋转45度，再次拍摄一组标定架素材，以此类推，直到将标定架旋转一周为止，一共拍摄8组不同角度的标定架素材。</p>
+</li>
+</ol>
+<p><em>注意：“人形参考”以及8组标定架拍摄角度未完成拍摄之前，标定操作区的拍摄提示将显示“未拍摄”字样，每完成一组拍摄后对应的拍摄提示将变更为“已拍摄”。点击标定操作区的“Reset”按钮将清空当前标定根目录下的所有文件，方便用户重新拍摄标定素材。</em></p>
+<h4 id="4">4.设备标定</h4>
+<p><img alt="image" src="../imgs/PromHoloStudio/page_deviceCalib/img_deviceCalib_temp7.png" /></p>
+<p>用户完成标定素材的拍摄后，标定按钮将激活可用，点击标定按钮即可开始进行设备标定；按钮下方的进度条以及相应弹出的系统弹窗将显示标定的进度。标定完成后，<a href="#deviceSetting_pointcloudArea">点云预览区</a>将显示之前拍摄“人形参考”标定素材的人体点云模型；如果标定失败，系统将提示用户重新拍摄标定素材并尝试再次进行设备标定。（<em>标定过程将占用大量的算力资源，并且持续时间较长，请用户耐心等待。</em>）</p></div>
             </div>
         </div>
 

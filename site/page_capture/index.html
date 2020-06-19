@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>H5 插件使用教程 - 普罗米修斯视觉用户手册</title>
+        <title>Page capture - 普罗米修斯视觉用户手册</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -36,14 +36,14 @@
                             <li class="navitem">
                                 <a href=".." class="nav-link">Prometheus Vision 系列教程</a>
                             </li>
-                            <li class="navitem active">
-                                <a href="./" class="nav-link">H5 插件使用教程</a>
+                            <li class="navitem">
+                                <a href="../develop_h5/" class="nav-link">H5 插件使用教程</a>
                             </li>
                             <li class="navitem">
                                 <a href="../develop_unity3d/" class="nav-link">Unity3D 插件使用教程</a>
                             </li>
-                            <li class="navitem">
-                                <a href="../page_capture/" class="nav-link">Page capture</a>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Page capture</a>
                             </li>
                             <li class="navitem">
                                 <a href="../page_deviceCalib/" class="nav-link">page deviceCalib</a>
@@ -69,12 +69,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href=".." class="nav-link">
+                                <a rel="prev" href="../develop_unity3d/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../develop_unity3d/" class="nav-link">
+                                <a rel="next" href="../page_deviceCalib/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -96,17 +96,9 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#h5" class="nav-link">H5 插件使用教程</a>
+            <li class="nav-item" data-level="1"><a href="#holo" class="nav-link">Holo录播</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#sdk" class="nav-link">SDK简介</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">开发注意事项</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#sdk_1" class="nav-link">SDK接入快速入门</a>
+            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">功能介绍</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -117,84 +109,10 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="h5">H5 插件使用教程</h1>
-<h2 id="sdk">SDK简介</h2>
-<p>本部分教程的作用是介绍在H5开发环境下，使用PromethH5SDK（以下简称SDK）制作运行在浏览器上的H5页面。<br />
-SDK主要提供：容积视频解码,三维物体渲染,GLTF三维模型加载,屏幕交互支持等功能。</p>
-<p><img alt="image" src="../imgs/H5/00.png" />  <br />
-图1.1 SDK plugin目录结构  <br />
-* Broadway、Mp4Draco包含的是容积视频解码相关的功能.
-* OrbitControls.js包含屏幕交互支持功能.
-* three.module.js包含渲染三维内容功能.
-* GLTFLoader.js包含加载三维模型功能.</p>
-<h2 id="_1">开发注意事项</h2>
-<h3 id="_2">三维模型的渲染</h3>
-<ul>
-<li>初始化three.js的渲染参数,尤其注意场景相机与三维模型的position设置以及三维模型的scale设置.</li>
-</ul>
-<h2 id="sdk_1">SDK接入快速入门</h2>
-<h3 id="sdk_2">导入SDK</h3>
-<pre><code class="js"></code></pre>
-
-<h3 id="_3">准备渲染三维物体</h3>
-<pre><code class="js">import * as THREE from &quot;./three.module.js&quot; 
-</code></pre>
-
-<p>引用three.js</p>
-<pre><code class="js">scene = new THREE.Scene
-var ambientLight = new THREE.AmbientLight(0xffffff,1)
-scene.add(ambientLight)
-</code></pre>
-
-<p>初始化three.js</p>
-<h3 id="_4">解码容积视频</h3>
-<pre><code class="js">    &lt;script src=&quot;Broadway/mp4.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;Broadway/Decoder.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;Broadway/YUVCanvas.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;Broadway/Player.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;Broadway/stream.js&quot;&gt;&lt;/script&gt;
-</code></pre>
-
-<p>引用Broadway</p>
-<pre><code class="js"> import { MeshQueue, Mp4MeshLoader } from './Mp4Draco/Mp4MeshLoader.js'
-</code></pre>
-
-<p>引用Mp4Draco</p>
-<pre><code class="js"> g_meshQueue = new MeshQueue()
- g_meshQueue.load(url, function () {
-     scene.add(g_meshQueue.root)
-     }, onProgress, onError)
-</code></pre>
-
-<p>解码ur</p>
-<h3 id="_5">设置交互支持</h3>
-<pre><code class="js">import { OrbitControls } from './OrbitControls.js'
-</code></pre>
-
-<p>引用OrbitControls.js</p>
-<pre><code class="js">controls = new OrbitControls(camera, renderer.domElement)
-</code></pre>
-
-<p>初始化OrbitControls.js</p>
-<h3 id="_6">渲染</h3>
-<pre><code class="js">renderer.render(scene, camera)
-controls.update()// only required if controls.enableDamping = true, or if controls.autoRotate = true
-</code></pre>
-
-<p>每帧渲染</p>
-<h3 id="_7">加载其他三维模型(可选)</h3>
-<pre><code class="js">import { GLTFLoader } from &quot;./GLTFLoader.js&quot;
-</code></pre>
-
-<p>引用GLTFLoader.js</p>
-<pre><code class="js">var gltf = new GLTFLoader()
-gltf.load('https://prometh-test.oss-cn-shenzhen.aliyuncs.com/dev/2019/ClothesDemo/SceneModel/scene.gltf',function (gltf) {
-    scene.add(gltf.scene)
-    },
-    null,onError)
-</code></pre>
-
-<p>初始化GLTFLoader.js</p></div>
+<p><a href="../promholostudio/#id_promholostudio">返回</a></p>
+<h1 id="holo"><span id = "id_page_capture">Holo录播</span></h1>
+<h2 id="_1">功能介绍</h2>
+<p>Holo录播模块为用户提供人体容积视频素材的本地录制功能，用户完成素材的录制后还需要到<a href="../page_holoEdit/#id_page_holoEdit">录播编辑</a>模块完成人体容积视频素材的预览、编辑和导出。界面上分为左边的<a href="#capture_previewArea">视频预览区</a>、左上方的<a href="#capture_pointcloudArea">点云预览区</a>和左下方的<a href="#capture_captureArea">拍摄操作区</a>。</p></div>
             </div>
         </div>
 

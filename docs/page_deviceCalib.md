@@ -2,17 +2,17 @@
 
 #<span id = "id_page_deviceCalib">设备标定</span>
 ## 功能介绍
-设备标定模块需要使用与全息容积拍摄影棚相配套的标定架，结合系统程序的标定算法完成影棚相机阵列的相机标定工作。该环节处理结果的好坏将直接影响人体容积视频的呈现质量。界面上分为左边的[视频预览区](#deviceSetting_previewArea)、右上方的[点云预览区](#deviceSetting_pointcloudArea)和右下方的[标定操作区](#deviceSetting_calibArea)
+设备标定模块需要使用与全息容积拍摄影棚相配套的标定架，结合系统程序的标定算法完成影棚相机阵列的相机标定工作。该环节处理结果的好坏将直接影响人体容积视频的呈现质量。界面上分为左边的[视频预览区](#deviceCalib_previewArea)、右上方的[点云预览区](#deviceCalib_pointcloudArea)和右下方的[标定操作区](#deviceCalib_calibArea)
 
 ![image](imgs/PromHoloStudio/page_deviceCalib/img_deviceCalib_temp.png)
 
 ## 操作指南
-###<span id = "deviceSetting_previewArea">视频预览区</span>
+###<span id = "deviceCalib_previewArea">视频预览区</span>
 视频预览区采用类似九宫格的矩阵排列方式，显示当前所有接入系统相机的视频画面预览。每台相机在各自画幅上均按照左边彩色图右边深度图的方式予以布局，彩色图/深度图上方将显示该相机的相机名称-图像类型后缀（例如：相机00的彩色图为00-color，对应的深度图为00-depth），而如果该相机是主相机的话，则会在相机名称前冠以[main]字样（例如：相机00为主相机，其彩色图为[main]00-color，对应的深度图为[main]00-depth）。
 
 ![image](imgs/PromHoloStudio/img_videoPreview_temp.png)
 
-###<span id = "deviceSetting_pointcloudArea">点云预览区</span>
+###<span id = "deviceCalib_pointcloudArea">点云预览区</span>
 点云预览区将对标定完成后的人体点云模型予以显示和预览。用户可以通过鼠标或键盘对点云模型的观察视角进行操控，依据其与真实人体的贴合程度直观上大致判断标定结果的好坏。
 
 **支持的鼠标/键盘操作**：
@@ -24,7 +24,7 @@
 ![image](imgs/PromHoloStudio/img_pointcloudPreview_temp.png)
 <!-- <img src="imgs/PromHoloStudio/page_deviceCalib/img_deviceCalib_temp3.png" width="50%"> -->
 
-###<span id = "deviceSetting_calibArea">标定操作区</span>
+###<span id = "deviceCalib_calibArea">标定操作区</span>
 标定操作区负责引导用户完成影棚相机阵列的相机标定工作。具体操作流程如下：
 
 #### 1.指定标定根目录
@@ -36,7 +36,7 @@
 
 #### 2.打开/关闭相机
 ![image](imgs/PromHoloStudio/img_openDevice_temp.png) / ![image](imgs/PromHoloStudio/img_closeDevice_temp.png)
-用户点击“打开相机”按钮，将刷新、打开所有接入系统的相机设备（该操作将核对当前接入系统的相机设备授权信息，对于非法授权的相机设备将不予以支持，具体请参考[相机授权](promholostudio.md#CameraLicense)部分的描述）；成功打开相机后，用户可以再次点击该按钮（此时该按钮显示“关闭相机”字样）关闭所有的相机设备。
+用户点击“打开相机”按钮，将刷新、打开所有接入系统的相机设备（该操作将核对当前接入系统的相机设备授权信息，对于非法授权的相机设备将不予以支持，具体请参考[相机授权](promholostudio.md#CameraLicense)部分的描述）；成功打开相机后，[视频预览区](#deviceCalib_previewArea)将显示当前所有接入系统相机的视频画面预览；用户再次点击该按钮（此时该按钮显示“关闭相机”字样）将关闭所有的相机设备。
 *注意：有可能因设备连接不良而导致某些相机设备无法刷新/打开，此时用户需根据软件的反馈检查相机设备的连接情况，尝试重新拔插设备并再次刷新、打开相机。*
 
 #### 3.拍摄标定素材
@@ -53,4 +53,4 @@
 #### 4.设备标定
 ![image](imgs/PromHoloStudio/page_deviceCalib/img_deviceCalib_temp7.png)
 
-用户完成标定素材的拍摄后，标定按钮将激活可用，点击标定按钮即可开始进行设备标定；按钮下方的进度条以及相应弹出的系统弹窗将显示标定的进度。标定完成后，[点云预览区](#deviceSetting_pointcloudArea)将显示之前拍摄“人形参考”标定素材的人体点云模型；如果标定失败，系统将提示用户重新拍摄标定素材并尝试再次进行设备标定。（*标定过程将占用大量的算力资源，并且持续时间较长，请用户耐心等待。*）
+用户完成标定素材的拍摄后，标定按钮将激活可用，点击标定按钮即可开始进行设备标定；按钮下方的进度条以及相应弹出的系统弹窗将显示标定的进度。标定完成后，[点云预览区](#deviceCalib_pointcloudArea)将显示之前拍摄“人形参考”标定素材的人体点云模型；如果标定失败，系统将提示用户重新拍摄标定素材并尝试再次进行设备标定。（*标定过程将占用大量的算力资源，并且持续时间较长，请用户耐心等待。*）

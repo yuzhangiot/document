@@ -2,7 +2,7 @@
 
 #<span id = "id_page_deviceCalib">设备标定</span>
 ## 功能介绍
-设备标定模块需要使用与全息容积拍摄影棚相配套的标定架，结合系统程序的标定算法完成影棚相机阵列的相机标定工作。该环节处理结果的好坏将直接影响人体容积视频的呈现质量。界面上分为左边的[视频预览区](#deviceSetting_previewArea)、左上方的[点云预览区](#deviceSetting_pointcloudArea)和左下方的[标定操作区](#deviceSetting_calibArea)
+设备标定模块需要使用与全息容积拍摄影棚相配套的标定架，结合系统程序的标定算法完成影棚相机阵列的相机标定工作。该环节处理结果的好坏将直接影响人体容积视频的呈现质量。界面上分为左边的[视频预览区](#deviceSetting_previewArea)、右上方的[点云预览区](#deviceSetting_pointcloudArea)和右下方的[标定操作区](#deviceSetting_calibArea)
 
 ![image](imgs/PromHoloStudio/page_deviceCalib/img_deviceCalib_temp.png)
 

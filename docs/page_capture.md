@@ -2,7 +2,7 @@
 
 #<span id = "id_page_capture">Holo录播</span>
 ## 功能介绍
-Holo录播模块为用户提供人体容积视频素材的本地录制功能，用户完成素材的录制后还需要到[录播编辑](page_holoEdit.md#id_page_holoEdit)模块完成人体容积视频素材的预览、编辑和导出。界面上分为左边的[视频预览区](#capture_previewArea)、左上方的[点云预览区](#capture_pointcloudArea)和左下方的[拍摄操作区](#capture_captureArea)。
+Holo录播模块为用户提供人体容积视频素材的本地录制功能，用户完成素材的录制后还需要到[录播编辑](page_holoEdit.md#id_page_holoEdit)模块完成人体容积视频素材的预览、编辑和导出。界面上分为左边的[视频预览区](#capture_previewArea)、右上方的[点云预览区](#capture_pointcloudArea)和右下方的[拍摄操作区](#capture_captureArea)。
 
 ![image](imgs/PromHoloStudio/page_capture/img_capture_temp.png)
 
@@ -38,9 +38,9 @@ Holo录播模块为用户提供人体容积视频素材的本地录制功能，�
 用户点击“打开相机”按钮，将刷新、打开所有接入系统的相机设备（该操作将核对当前接入系统的相机设备授权信息，对于非法授权的相机设备将不予以支持，具体请参考[相机授权](promholostudio.md#CameraLicense)部分的描述）；成功打开相机后，用户可以再次点击该按钮（此时该按钮显示“关闭相机”字样）关闭所有的相机设备。
 *注意：有可能因设备连接不良而导致某些相机设备无法刷新/打开，此时用户需根据软件的反馈检查相机设备的连接情况，尝试重新拔插设备并再次刷新、打开相机。*
 
-#### 3.拍摄容积视频素材
+####<span id = "capture_captureAssets">3.拍摄容积视频素材</span>
 ![image](imgs/PromHoloStudio/page_capture/img_capture_temp4.png) / ![image](imgs/PromHoloStudio/page_capture/img_capture_temp5.png)
-用户在设定好拍摄根目录并且成功打开相机之后，可以开始拍摄容积视频素材。容积视频素材的拍摄模式分为两种：一种是**录像模式**，另一种是**拍照模式**。**录像模式**将录制一段有限时长的动态视频素材，经[录播编辑](page_holoEdit.md#id_page_holoEdit)模块编辑处理后可以生成一段包含动态内容的容积视频文件（文件名后缀为.mp4），该文件需要配合使用我们提供的专门的播放工具/插件才能播放。**拍照模式**将拍摄一组单帧的静态照片素材，经[录播编辑](page_holoEdit.md#id_page_holoEdit)模块编辑处理后可以生成一份单帧静态内容的模型文件（文件名后缀为.obj），该文件支持在如3ds Max、Maya、Sketchup、Blender、Houdini等许多主流建模软件当中查看使用。
+用户在设定好拍摄根目录并且成功打开相机之后，可以开始拍摄容积视频素材。容积视频素材的拍摄模式分为两种：一种是**录像模式**，另一种是**拍照模式**。**录像模式**将录制一段有限时长的动态视频素材，经[录播编辑](page_holoEdit.md#id_page_holoEdit)模块编辑处理后可以生成一段包含动态内容的容积视频文件（文件名后缀为.mp4），该文件需要配合使用我们提供的专门的播放工具/插件才能播放。**拍照模式**将拍摄一组单帧的静态照片素材，经[录播编辑](page_holoEdit.md#id_page_holoEdit)模块编辑处理后可以生成一份单帧静态内容的三维重建模型文件（文件名后缀为.obj），该文件支持在如3ds Max、Maya、Sketchup、Blender、Houdini等许多主流建模软件当中查看使用。
 1. **录像模式**操作：
 用户在拍摄操作区当中点击“录像”按钮切换到录像模式，在相机正常开启的情况下，点击下方的红色圆形按钮开始录像，此时按钮上方将实时显示当前的录制时间（单位秒），同时按钮也变成“停止录像”样式，再次点击该按钮即可停止录像。
 ![image](imgs/PromHoloStudio/page_capture/img_capture_temp6.png)

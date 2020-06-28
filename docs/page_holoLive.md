@@ -25,7 +25,7 @@ Holo直播模块为用户提供人体容积视频的在线直播功能。用户�
 * 帧率：指代直播容积视频的播放帧率，系统提供5 fps和15 fps两个档位，默认值为15 fps。帧率越高则画面呈现效果越流畅，但是系统性能开销也会越高，直播推流的数据量也越大，更有可能造成直播的高延迟。
 * CRF：指代容积视频传输的码流压缩率，系统提供17、21和24三个档位，默认值为17。CRF值越小代表码流压缩率越小，画质越无损，但是直播推流的数据量也越大，更有可能造成直播的高延迟。
 
-*注意：由于用户的网络状况各不相同，请根据实际情况酌情平衡直播的画质和网络延迟。*
+*注意：由于用户的网络状况各不相同，请根据实际情况酌情平衡直播的画质和网络延迟。在直播推流已开启状态下，用户无法修改直播参数，此时请先[关闭推流](#holoLive_startAndStopLive)。*
 
 ![image](imgs/PromHoloStudio/page_holoLive/img_holoLive_temp3.png)
 
@@ -51,9 +51,9 @@ Holo直播模块为用户提供人体容积视频的在线直播功能。用户�
 #### 1.打开/关闭相机
 ![image](imgs/PromHoloStudio/page_holoLive/img_holoLive_temp7.png) / ![image](imgs/PromHoloStudio/page_holoLive/img_holoLive_temp8.png)
 用户点击“打开相机”按钮，将刷新、打开所有接入系统的相机设备（该操作将核对当前接入系统的相机设备授权信息，对于非法授权的相机设备将不予以支持，具体请参考[相机授权](promholostudio.md#CameraLicense)部分的描述）；成功打开相机后，[直播状态统计区](#holoLive_statusArea)中显示的除Writer管线之外的其他管线将开始工作，而[点云/模型预览区](#holoLive_pointcloudAndModelPreviewArea)也将实时显示当前全息容积拍摄影棚中人体的点云模型和完整三维重建模型；用户再次点击该按钮（此时该按钮显示“关闭相机”字样）将关闭所有的相机设备，而如果当前正在进行直播推流，则该操作将停止推流，且[直播状态统计区](#holoLive_statusArea)中显示的所有管线也将停止工作。
-*注意：有可能因设备连接不良而导致某些相机设备无法刷新/打开，此时用户需根据软件的反馈检查相机设备的连接情况，尝试重新拔插设备并再次刷新、打开相机。*
+*注意：有可能因设备连接不良而导致某些相机设备无法刷新/打开，此时用户需根据软件的反馈检查相机设备的连接情况，尝试重新拔插设备并再次刷新、打开相机。容积视频直播目前仅支持相机设备在分辨率为**1280x720**且影像格式为**RGBA32**的模式下工作，如果当前的相机参数设置不对，请按照系统的弹窗提示指引，到[设备调整](page_deviceSetting.md#id_page_deviceSetting)页进行相应的参数调整。*
 
-#### 2.开启/关闭推流
+####<span id = "holoLive_startAndStopLive">2.开启/关闭推流</span>
 ![image](imgs/PromHoloStudio/page_holoLive/img_holoLive_temp9.png) / ![image](imgs/PromHoloStudio/page_holoLive/img_holoLive_temp10.png)
 用户在成功打开相机并且[正确设置直播地址](#holoLive_addressArea)后，点击“开启推流”按钮，此时[直播状态统计区](#holoLive_statusArea)中显示的Writer管线将开始工作，该管线会把当前全息容积拍摄影棚中的人体全息容积视频流实时推送到远端的直播地址上；用户再次点击该按钮（此时该按钮显示“关闭推流”字样）将停止Writer管线的推流工作。
 *注意：直播容积视频需要配合使用我们提供的专门的直播播放工具，访问对应的直播地址才能实现该直播的实时在线浏览。*

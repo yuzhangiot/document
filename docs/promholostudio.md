@@ -17,12 +17,12 @@ PromHoloStudio软件是由深圳普罗米修斯视觉技术有限公司开发的
 * [相机授权](#CameraLicense)
 
 ###<span id = "Registration">软件注册</span>
-用户初次使用本软件时将弹出软件注册弹窗，请联系我们(<prometheus@gamil.com>)，将弹窗展示的软件申请码通过Email或者其他方式提供给我们。核实相关信息后，我们将把对应的软件注册码发送给您，请将其粘贴到注册弹窗的注册码输入区域，点击激活按钮即可完成本软件的激活注册。
+用户初次使用本软件时将弹出软件注册弹窗，请联系我们(<toby@prometh.xyz>)，将弹窗展示的软件申请码通过Email或者其他方式提供给我们。核实相关信息后，我们将把对应的软件注册码发送给您，请将其粘贴到注册弹窗的注册码输入区域，点击激活按钮即可完成本软件的激活注册。
 
 ![image](imgs/PromHoloStudio/img_register.png)
 
 ###<span id = "CameraLicense">相机授权</span>
-用户全息容积视频拍摄影棚的相机设备发生变更时，请联系我们(<prometheus@gamil.com>)，将变更相机的设备ID通过Email或者其他方式提供给我们。核实相关信息后，我们将把对应的相机授权文件(license.dll)发送给您，请到本软件安装目录下更新替换相应文件即可完成相机授权。
+用户全息容积视频拍摄影棚的相机设备发生变更时，请联系我们(<toby@prometh.xyz>)，将变更相机的设备ID通过Email或者其他方式提供给我们。核实相关信息后，我们将把对应的相机授权文件(license.dll)发送给您，请到本软件安装目录下更新替换相应文件即可完成相机授权。
 
 ![image](imgs/PromHoloStudio/img_cameralicense.png)
 

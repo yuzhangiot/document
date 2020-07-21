@@ -55,6 +55,9 @@
                                 <a href="../page_holoEdit/" class="nav-link">page holoEdit</a>
                             </li>
                             <li class="navitem">
+                                <a href="../page_holoLive/" class="nav-link">page holoLive</a>
+                            </li>
+                            <li class="navitem">
                                 <a href="../preprocess_premiere/" class="nav-link">Premiere 抠图使用教程</a>
                             </li>
                             <li class="navitem active">
@@ -123,14 +126,13 @@
 
 <h1 id="promholostudio">PromHoloStudio 使用教程</h1>
 <h2 id="promholostudio_1">PromHoloStudio简介</h2>
-<p>PromHoloStudio软件是由深圳普罗米修斯视觉技术有限公司开发的软件系统，用户结合配套提供的全息容积视频拍摄影棚，可以方便的进行人体容积视频的本地采集、后续编辑以及实时在线直播等相关操作。</p>
+<p>PromHoloStudio软件是由深圳普罗米修斯视觉技术有限公司开发的软件系统，用户结合配套提供的全息容积视频拍摄影棚，可以方便的进行人体容积视频的本地采集和后续编辑等相关操作。</p>
 <h2 id="promholostudio_2"><span id = "id_promholostudio">PromHoloStudio功能模块</span></h2>
 <ul>
 <li><a href="../page_deviceSetting/#id_page_deviceSetting">设备调整</a></li>
 <li><a href="../page_deviceCalib/#id_page_deviceCalib">设备标定</a></li>
 <li><a href="../page_capture/#id_page_capture">Holo录播</a></li>
 <li><a href="../page_holoEdit/#id_page_holoEdit">录播编辑</a></li>
-<li><a href="#HoloLive">Holo直播</a>（可选）</li>
 </ul>
 <h2 id="_1">准备工作</h2>
 <ul>
@@ -138,13 +140,13 @@
 <li><a href="#CameraLicense">相机授权</a></li>
 </ul>
 <h3 id="_2"><span id = "Registration">软件注册</span></h3>
-<p>用户初次使用本软件时将弹出软件注册弹窗，请联系我们(<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#112;&#114;&#111;&#109;&#101;&#116;&#104;&#101;&#117;&#115;&#64;&#103;&#97;&#109;&#105;&#108;&#46;&#99;&#111;&#109;">&#112;&#114;&#111;&#109;&#101;&#116;&#104;&#101;&#117;&#115;&#64;&#103;&#97;&#109;&#105;&#108;&#46;&#99;&#111;&#109;</a>)，将弹窗展示的软件申请码通过Email或者其他方式提供给我们。核实相关信息后，我们将把对应的软件注册码发送给您，请将其粘贴到注册弹窗的注册码输入区域，点击激活按钮即可完成本软件的激活注册。</p>
-<p><img alt="image" src="../imgs/PromHoloStudio/img_register.png" /></p>
+<p>用户初次使用本软件时将弹出软件注册弹窗，请将弹窗展示的软件申请码通过电子邮件(<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#116;&#111;&#98;&#121;&#64;&#112;&#114;&#111;&#109;&#101;&#116;&#104;&#46;&#120;&#121;&#122;">&#116;&#111;&#98;&#121;&#64;&#112;&#114;&#111;&#109;&#101;&#116;&#104;&#46;&#120;&#121;&#122;</a>)或者其他方式提供给我们。核实相关信息后，我们将把对应的软件注册码发送给您，请将其粘贴到注册弹窗的注册码输入区域，点击激活按钮即可完成本软件的激活注册。</p>
+<p><img src="imgs/PromHoloStudio/img_register.png" width="50%"></p>
 <h3 id="_3"><span id = "CameraLicense">相机授权</span></h3>
-<p>用户全息容积视频拍摄影棚的相机设备发生变更时，请联系我们(<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#112;&#114;&#111;&#109;&#101;&#116;&#104;&#101;&#117;&#115;&#64;&#103;&#97;&#109;&#105;&#108;&#46;&#99;&#111;&#109;">&#112;&#114;&#111;&#109;&#101;&#116;&#104;&#101;&#117;&#115;&#64;&#103;&#97;&#109;&#105;&#108;&#46;&#99;&#111;&#109;</a>)，将变更相机的设备ID通过Email或者其他方式提供给我们。核实相关信息后，我们将把对应的相机授权文件(license.dll)发送给您，请到本软件安装目录下更新替换相应文件即可完成相机授权。</p>
-<p><img alt="image" src="../imgs/PromHoloStudio/img_cameralicense.png" /></p>
+<p>如果用户全息容积视频拍摄影棚的相机设备发生变更，打开相机时将弹出相机设备授权弹窗，请依照弹窗指引，将接入相机的设备SN号导出并将其通过电子邮件(<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#116;&#111;&#98;&#121;&#64;&#112;&#114;&#111;&#109;&#101;&#116;&#104;&#46;&#120;&#121;&#122;">&#116;&#111;&#98;&#121;&#64;&#112;&#114;&#111;&#109;&#101;&#116;&#104;&#46;&#120;&#121;&#122;</a>)或者其他方式提供给我们。核实相关信息后，我们将把对应的相机授权文件(license.dll)发送给您，请到本软件安装目录下更新替换相应文件即可完成相机授权。</p>
+<p><img src="imgs/PromHoloStudio/img_cameralicense2.png" width="40%">  <img src="imgs/PromHoloStudio/img_cameralicense.png" height="50%"></p>
 <h2 id="_4">开始使用</h2>
-<p>新用户初次使用本软件时将按照 <a href="../page_deviceSetting/#id_page_deviceSetting">设备调整</a> &gt; <a href="../page_deviceCalib/#id_page_deviceCalib">设备标定</a> 的流程完成基本的系统使用初始化工作，待 <a href="../page_deviceCalib/#id_page_deviceCalib">设备标定</a> 完成后，用户可以使用 <a href="../page_capture/#id_page_capture">Holo录播</a> 模块进行人体容积视频素材的本地录制，然后使用 <a href="../page_holoEdit/#id_page_holoEdit">录播编辑</a> 模块完成人体容积视频素材的预览、编辑和导出。购买了 <a href="#HoloLive">Holo直播</a> 模块的用户还可以直接在该模块当中进行人体容积视频的实时在线直播。</p>
+<p>新用户初次使用本软件时将按照 <a href="../page_deviceSetting/#id_page_deviceSetting">设备调整</a> &gt; <a href="../page_deviceCalib/#id_page_deviceCalib">设备标定</a> 的流程完成基本的系统使用初始化工作，待 <a href="../page_deviceCalib/#id_page_deviceCalib">设备标定</a> 完成后，用户可以使用 <a href="../page_capture/#id_page_capture">Holo录播</a> 模块进行人体容积视频素材的本地录制，然后使用 <a href="../page_holoEdit/#id_page_holoEdit">录播编辑</a> 模块完成人体容积视频素材的预览、编辑和导出。</p>
 <ul>
 <li>
 <p><a href="../page_deviceSetting/#id_page_deviceSetting">前往 设备调整 介绍页</a></p>
@@ -158,8 +160,7 @@
 <li>
 <p><a href="../page_holoEdit/#id_page_holoEdit">前往 录播编辑 介绍页</a></p>
 </li>
-</ul>
-<h3 id="holo"><span id = "HoloLive">Holo直播</span></h3></div>
+</ul></div>
             </div>
         </div>
 

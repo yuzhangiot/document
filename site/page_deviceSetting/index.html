@@ -55,6 +55,9 @@
                                 <a href="../page_holoEdit/" class="nav-link">page holoEdit</a>
                             </li>
                             <li class="navitem">
+                                <a href="../page_holoLive/" class="nav-link">page holoLive</a>
+                            </li>
+                            <li class="navitem">
                                 <a href="../preprocess_premiere/" class="nav-link">Premiere 抠图使用教程</a>
                             </li>
                             <li class="navitem">
@@ -116,30 +119,30 @@
 <p><a href="../promholostudio/#id_promholostudio">返回</a></p>
 <h1 id="_1"><span id = "id_page_deviceSetting">设备调整</span></h1>
 <h2 id="_2">功能介绍</h2>
-<p>设备调整模块负责对接入系统的相机设备进行相关参数的调整和画面预览。界面上分为左边的<a href="#DeviceSetting_PreviewArea">视频预览区</a>和右边的<a href="#DeviceSetting_SettingArea">参数设置区</a></p>
-<p><img alt="image" src="../imgs/PromHoloStudio/page_deviceSetting/img_devicesetting_temp.png" /></p>
+<p>设备调整模块负责对接入系统的相机设备进行相关参数的调整和画面预览。界面上分为左边的<a href="#deviceSetting_previewArea">视频预览区</a>和右边的<a href="#deviceSetting_settingArea">参数设置区</a></p>
+<p><img src="imgs/PromHoloStudio/page_deviceSetting/img_devicesetting_temp.png" width="75%"></p>
 <h2 id="_3">操作指南</h2>
-<h3 id="_4"><span id = "DeviceSetting_PreviewArea">视频预览区</span></h3>
-<p>视频预览区将显示当前已打开选中相机的视频画面预览，其中画面左边部分显示该相机的彩色图，右边部分显示该相机的深度图。彩色图/深度图上方将显示该相机的相机名称-图像类型后缀（例如：相机00的彩色图为00-color，对应的深度图为00-depth），而如果该相机是主相机的话，则会在相机名称前冠以[main]字样（例如：相机00为主相机，其彩色图为[main]00-color，对应的深度图为[main]00-depth）。</p>
-<p><img alt="image" src="../imgs/PromHoloStudio/page_deviceSetting/img_devicesetting2_temp.png" /></p>
-<h3 id="_5"><span id = "DeviceSetting_SettingArea">参数设置区</span></h3>
+<h3 id="_4"><span id = "deviceSetting_previewArea">视频预览区</span></h3>
+<p>视频预览区将显示当前选中的已打开相机的视频画面预览，其中画面左边部分显示该相机的彩色图，右边部分显示该相机的深度图。彩色图/深度图上方将显示该相机的相机名称-图像类型后缀（例如：相机00的彩色图为00-color，对应的深度图为00-depth），而如果该相机是主相机的话，则会在相机名称前冠以[main]字样（例如：相机00为主相机，其彩色图为[main]00-color，对应的深度图为[main]00-depth）。</p>
+<p><img src="imgs/PromHoloStudio/page_deviceSetting/img_devicesetting2_temp.png" width="50%"></p>
+<h3 id="_5"><span id = "deviceSetting_settingArea">参数设置区</span></h3>
 <p>参数设置区将引导用户对当前接入系统的相机设备进行相关参数的调整。具体操作流程如下：</p>
 <h4 id="1">1.刷新设备</h4>
-<p><img alt="image" src="../imgs/PromHoloStudio/page_deviceSetting/img_devicesetting3_temp.png" />
-用户点击刷新设备按钮将刷新当前已接入系统的相机设备信息，并在按钮左边向用户展示其接入数量。刷新设备操作将核对当前接入系统的相机设备授权信息，对于非法授权的相机设备将不予以支持，具体请参考<a href="../promholostudio/#CameraLicense">相机授权</a>部分的描述。
+<p><img src="imgs/PromHoloStudio/page_deviceSetting/img_devicesetting3_temp.png" width="40%"></p>
+<p>用户点击刷新设备按钮将刷新当前已接入系统的相机设备信息，并在按钮左边向用户展示当前相机的接入数量。
 <em>注意：有可能因设备连接不良而导致某些相机设备刷新不出或者刷新失败，此时用户需根据软件的反馈检查相机设备的连接情况，尝试重新拔插设备并再次刷新。</em></p>
 <h4 id="2"><span id = "DeviceSetting_OpenOrCloseCamera">2.打开/关闭相机</span></h4>
 <p><img alt="image" src="../imgs/PromHoloStudio/img_openDevice_temp.png" /> / <img alt="image" src="../imgs/PromHoloStudio/img_closeDevice_temp.png" />
-用户在成功刷新设备后，点击“打开相机”按钮将打开所有接入系统的相机设备；成功打开相机后，用户可以再次点击该按钮（此时该按钮显示“关闭相机”字样）关闭所有的相机设备。
+用户在成功刷新设备后，点击“打开相机”按钮将打开所有接入系统的相机设备；成功打开相机后，<a href="#deviceSetting_previewArea">视频预览区</a>将显示当前选中相机的视频画面预览；用户再次点击该按钮（此时该按钮显示“关闭相机”字样）将关闭所有的相机设备。打开相机操作将核对当前接入系统的相机设备授权信息，对于非法授权的相机设备将不予支持，具体请参考<a href="../promholostudio/#CameraLicense">相机授权</a>部分的描述。
 <em>注意：有可能因设备连接不良而导致某些相机设备无法打开，此时用户需根据软件的反馈检查相机设备的连接情况，尝试重新拔插设备并再次刷新、打开相机。</em></p>
 <h4 id="3">3.参数设置</h4>
-<p><img alt="image" src="../imgs/PromHoloStudio/page_deviceSetting/img_devicesetting6_temp.png" />
-用户在成功刷新设备后，即可在下方显示当前接入系统的相机设备信息列表。列表详细列举了当前相机设备的各类参数，并提供了相应的表格控件以便用户进行相应的设置和修改。用户可以使用表头提供的控件如下拉框等，一次性修改所有相机的对应参数，也可以在表体当中选定某台相机设备，使用表体控件来单独调整某台相机的具体参数。（被选中的相机在列表中高亮显示，如果此时相机已打开，则会同步在<a href="#DeviceSetting_PreviewArea">视频预览区</a>显示对应的相机画面预览）
+<p><img src="imgs/PromHoloStudio/page_deviceSetting/img_devicesetting6_temp.png" width="85%"></p>
+<p>用户在成功刷新设备后，即可在下方显示当前接入系统的相机设备信息列表。列表详细列举了当前相机设备的各类参数，并提供了相应的表格控件以便用户进行相应的设置和修改。用户可以使用表头控件如下拉框等，一次性修改所有相机的对应参数，也可以在表体当中鼠标选定某台相机设备，双击其列表项，使用表体控件来单独调整某台相机的具体参数。（被选中的相机在列表中高亮显示，如果此时相机已打开，则会在<a href="#deviceSetting_previewArea">视频预览区</a>同步显示对应的相机预览画面）
 <em>注意：除了<a href="#id_page_deviceSetting_mainCamera">主相机</a>选择以及<a href="#id_page_deviceSetting_cameraName">相机名称</a>这两个设定需要在表体中单独对每台相机进行调整设置之外，其余参数一般推荐使用表头控件统一调整，使得每台相机的对应参数保持一致，这样可以更好的保证系统的拍摄质量。</em></p>
 <p><strong>设备信息列表参数</strong>：</p>
 <ul>
 <li>
-<p><strong><spand id = "id_page_deviceSetting_mainCamera">主相机</span></strong>：指代全息容积拍摄影棚当中正对用户水平放置的某台相机。用户初次使用本软件时，需要在成功刷新设备信息后，在设备信息列表的表体当中勾选指定。（<em>正确指定主相机关乎<a href="../page_deviceCalib/#id_page_deviceCalib">设备标定</a>的运行结果，该环节不可省略。</em>）</p>
+<p><strong><spand id = "id_page_deviceSetting_mainCamera">主相机</span></strong>：指代全息容积拍摄影棚当中正对用户脸部的某台相机。用户初次使用本软件时，需要在成功刷新设备信息后，在设备信息列表的表体当中勾选指定。（<em>正确指定主相机关乎<a href="../page_deviceCalib/#id_page_deviceCalib">设备标定</a>的运行结果，该环节不可省略。</em>）</p>
 </li>
 <li>
 <p><strong><spand id = "id_page_deviceSetting_cameraName">相机名称</span></strong>：用户初次使用本软件时，相机名称默认为数字序号（如00、01、02......）。用户成功刷新设备信息后，可以在设备信息列表的表体当中选中某台相机设备，双击其“相机名称”文本项，输入自定义的相机名称。（<em>最大支持4个中文字符或者8个英文字符。</em>）</p>
@@ -148,28 +151,28 @@
 <p><strong>序列号</strong>：相机设备的唯一设备ID，仅用于显示，不可手动修改。</p>
 </li>
 <li>
-<p><strong>分辨率</strong>：相机拍摄画面的彩色图像分辨率，支持1280x720、1920x1080、2560x1440、3840x2160四个档位。（<em>Holo录播模式下推荐使用1920x1080分辨率；Holo直播模式下只支持1280x720分辨率。</em>）</p>
+<p><strong>分辨率</strong>：相机拍摄画面的彩色图像分辨率，支持1280x720、1920x1080、2560x1440三个档位。</p>
 </li>
 <li>
-<p><strong>帧率</strong>：相机拍摄画面的帧率，支持5fps、15fps、30fps三个档位。（<em>推荐使用15fps档位，可以比较平衡的保证拍摄的质量和设备性能开销。</em>）</p>
+<p><strong>帧率</strong>：相机拍摄画面的帧率，支持5fps、15fps两个档位。（<em>默认推荐使用15fps档位</em>）</p>
 </li>
 <li>
-<p><strong>格式</strong>：相机拍摄输出的影像格式，支持MJPG、RGBA32两个档位。（<em>Holo录播模式下只支持MJPG格式；Holo直播模式下只支持RGBA32格式。</em>）</p>
+<p><strong>格式</strong>：相机拍摄输出的影像格式，支持MJPG一个档位。</p>
 </li>
 <li>
-<p><strong>深度</strong>：相机拍摄深度图的成像方式，支持NFOV_UNBINNED、WFOV_BINNED、WFOV_UNBINNED三个档位。（<em>其中WFOV_BINNED、WFOV_UNBINNED为广视角成像，而系统默认采用NFOV_UNBINNED方式成像</em>）</p>
+<p><strong>深度</strong>：相机拍摄深度图的成像方式，支持NFOV_UNBINNED一个档位。</p>
 </li>
 <li>
 <p><strong>白平衡</strong>：相机拍摄画面彩色图的白平衡，支持WB-Auto、WB-4000、WB-5000、WB-6000四个档位。（<em>系统默认采用WB-Auto档位，用户可以根据各自实际情况酌情调整。</em>）</p>
 </li>
 <li>
-<p><strong>同步</strong>：全息容积拍摄影棚各相机数据流的同步方式，支持Sync-Auto、Sync-Master、Sync-Subordinate、Sync-Standalone四个档位。（<em>系统默认采用Sync-Auto自动同步，不建议用户更改该参数值。</em>）</p>
+<p><strong>同步</strong>：全息容积拍摄影棚各相机数据流的同步方式，支持Sync-Auto一个档位。</p>
 </li>
 <li>
-<p><strong>曝光</strong>：相机拍摄的曝光时长，支持Expo-Auto、Expo-3ms、Expo-10ms、Expo-20ms、Expo-30ms四个档位。（<em>系统默认采用Expo-3ms档位，用户可以根据各自实际情况酌情调整。</em>）</p>
+<p><strong>曝光</strong>：相机拍摄的曝光时长，支持Expo-Auto、Expo-3ms、Expo-10ms、Expo-20ms、Expo-30ms五个档位。（<em>系统默认采用Expo-3ms档位，用户可以根据各自实际情况酌情调整。</em>）</p>
 </li>
 <li>
-<p><strong>GAIN</strong>：相机拍摄的亮度补偿，调节范围：1~255，值越大画面越亮（<em>系统默认采用127这个中间值，用户可以根据各自实际情况酌情调整。</em>）</p>
+<p><strong>GAIN</strong>：相机拍摄的亮度补偿，调节范围：1~255，值越大画面越亮（<em>系统默认值为200，用户可以根据各自实际情况酌情调整。</em>）</p>
 </li>
 </ul>
 <p>（<em>注意：以上参数信息，当相机处于打开状态时，仅可调节</em><em>主相机</em><em>、</em><em>白平衡</em><em>、</em><em>曝光</em><em>、</em><em>GAIN</em><em>四个参数，用户如果需要调整其他参数设置，请先<a href="#DeviceSetting_OpenOrCloseCamera">关闭相机</a></em>）</p></div>

@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Unity3D 插件使用教程 - 普罗米修斯视觉用户手册</title>
+        <title>Develop unity3d - 普罗米修斯视觉用户手册</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -40,7 +40,7 @@
                                 <a href="../develop_h5/" class="nav-link">H5 插件使用教程</a>
                             </li>
                             <li class="navitem active">
-                                <a href="./" class="nav-link">Unity3D 插件使用教程</a>
+                                <a href="./" class="nav-link">Develop unity3d</a>
                             </li>
                             <li class="navitem">
                                 <a href="../page_capture/" class="nav-link">Page capture</a>
@@ -99,40 +99,43 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#unity3d" class="nav-link">Unity3D 插件使用教程</a>
-              <ul class="nav flex-column">
             <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">简介</a>
               <ul class="nav flex-column">
               </ul>
             </li>
+            
             <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">主要特性</a>
               <ul class="nav flex-column">
               </ul>
             </li>
+            
             <li class="nav-item" data-level="2"><a href="#_3" class="nav-link">支持设备</a>
               <ul class="nav flex-column">
               </ul>
             </li>
+            
             <li class="nav-item" data-level="2"><a href="#_4" class="nav-link">开发环境要求</a>
               <ul class="nav flex-column">
               </ul>
             </li>
+            
             <li class="nav-item" data-level="2"><a href="#_5" class="nav-link">文件目录</a>
               <ul class="nav flex-column">
               </ul>
             </li>
+            
             <li class="nav-item" data-level="2"><a href="#_6" class="nav-link">快速入门</a>
               <ul class="nav flex-column">
               </ul>
             </li>
+            
             <li class="nav-item" data-level="2"><a href="#api" class="nav-link">API控制</a>
               <ul class="nav flex-column">
               </ul>
             </li>
+            
             <li class="nav-item" data-level="2"><a href="#_7" class="nav-link">演示视频</a>
               <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
         </ul>
@@ -140,16 +143,14 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="unity3d">Unity3D 插件使用教程</h1>
 <h2 id="_1">简介</h2>
-<pre><code>unityMeshPlayer提供简单高效的体积视频解码，开发者可以利用unityMeshPlayer在Unity3d中进行体积视频的解码预览与二次开发，
-</code></pre>
+<p>HoloCatchLightPlugin提供简单高效的体积视频解码，开发者可以利用HoloCatchLightPlugin在Unity3d中进行体积视频的解码预览与二次开发，</p>
 <h2 id="_2">主要特性</h2>
 <ul>
 <li>提供录播和实时直播的高性能解码能力</li>
 <li>可在编辑器模式预览</li>
 <li>全平台</li>
-<li>可通过Timeline控制</li>
+<li>可通过Timeline控制（Pro版本）</li>
 </ul>
 <h2 id="_3">支持设备</h2>
 <ul>
@@ -157,37 +158,22 @@
 <li>Mac</li>
 <li>IOS</li>
 <li>Android</li>
+<li>Hololens</li>
 </ul>
 <h2 id="_4">开发环境要求</h2>
 <pre><code>unity2018.4以上，建议unity2019.3及以上
 </code></pre>
 <h2 id="_5">文件目录</h2>
-<pre><code>├─DemoScene 示例场景包含模型预览的视角交互，材质切换功能
-│  ├─Material
-│  │      Meshplayer.mat
-│  │      MyShader.shader
-│  │      NormalMaterial.mat
-│  │
-│  ├─Scene
-│  │      DemoScene.unity
-│  │
-│  ├─Scripts
-│  │      MeshPlayerController.cs
-│  │      ModelViewController.cs
-│  │      UIManager.cs
-│  │
-│  └─Texture
-│          circle_128.png
-│
-├─Prometh 插件主要部分
+<pre><code>├─Prometh 插件主要部分
 │  ├─Editor
 │  │      MeshPlayerPluginEditor.cs 编辑器脚本，提供编辑器模式预览等功能
 │  │
 │  ├─Plugins 各个平台的库
 │  │  ├─arm64-v8a 对应安卓64位平台
 │  │  ├─armeabi-a7v 对应安卓32位平台
-|  │  ├─ios 对应ios平台
+│  │  ├─ios 对应ios平台
 │  │  ├─Mac 对应Mac平台
+│  │  ├─UWP 对应Hololens平台(UWP平台需要切换至对应平台，然后从压缩包中解压出目录中的插件)
 │  │  └─x86_64 对应安卓64位平台
 │  │
 │  ├─Prefabs
@@ -202,34 +188,25 @@
 │  │      MeshReader.cs C#部分与底层API的中间层，封装成MeshData数据
 │  │      ReaderAPI.cs 调用底层API的部分
 │  │
-│  └─TimeLine 通过TimeLine去控制模型播放的实现部分
-│          PromethPlayableAsset.cs
-│          PromethPlayableAsset.cs.meta
-│          PromethPlayableBehaviour.cs
-│          PromethPlayableBehaviour.cs.meta
-│          Timeline.playable
-│          Timeline.playable.meta
-│          TrackPrometh.cs
-│          TrackPrometh.cs.meta
-│
-├─Scenes
-│      PromethLocal.unity 基本功能场景
-│      TimeLineDemo.unity 通过TimeLine控制的案例场景
-│
-└─StreamingAssets 在Unity工程中的视频文件要放在这里进行播放
+│  ├─Scenes
+│  │      PromethLocal.unity 基本功能场景
+│  └─StreamingAssets 首先要将这个文件夹移到根目录，视频文件要放在这里
 </code></pre>
 <h2 id="_6">快速入门</h2>
-<p>将PromethCube拖进场景，将组件中的SourceType选择为PLAYBACK，SourcePAth填入StreamingAssets文件夹下的路径，记得加上后缀，在StreamingAssets下文路径要勾选InStreamingAssets属性，编辑器下可以点击PreviewFrame进度条进行预览，SourceDurationSec，是当前模型的总时长，SpeedRatio为模型的播放速度。</p>
+<p>首先将Prometh/StreamingAssets文件夹放到Assets根目录
+您可以直接运行Scene里面的Demo场景来快速使用，或者新建场景自行创建，首先将PromethCube拖进场景，将组件中的SourceType选择为PLAYBACK，SourcePath填入StreamingAssets文件夹下的路径，记得加上.mp4后缀，在StreamingAssets下文路径要勾选InStreamingAssets属性，编辑器下可以点击PreviewFrame进度条进行预览，SourceDurationSec，是当前模型的总时长，SpeedRatio为模型的播放速度。</p>
 <h2 id="api">API控制</h2>
-<p>MeshPlayerPlugin暴露出一些接口可以对视频播放进行控制
+<p>MeshPlayerPlugin提供出一些接口可以对视频播放进行控制
 * MeshPlayerPlugin.OpenSource(string str)  // 打开文件，参数为地址，StreamingAssets文件夹下的路径，否则为绝对路径
 * MeshPlayerPlugin.Play()  // 播放
 * MeshPlayerPlugin.Pause()  // 暂停
-* MeshPlayerPlugin.SetMaterial(Material mat)  // 切换材质
 * MeshPlayerPlugin.GotoSecond(float sec)  // 跳到多少秒
 * MeshPlayerPlugin.SpeedRatio //控制速度，播放前生效</p>
 <h2 id="_7">演示视频</h2>
-<p><a href="https://www.bilibili.com/video/BV1Dt4y1C7Qs"><img alt="Unity3D Demo Video" src="../imgs/07.png" /></a></p></div>
+<p><a href="https://www.bilibili.com/video/BV1Dt4y1C7Qs"><img alt="Unity3D Demo Video" src="../imgs/07.png" /></a></p>
+<ul>
+<li>您有什么疑问或者需求请联系技术支持: busiyg@163.com</li>
+</ul></div>
             </div>
         </div>
 

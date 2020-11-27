@@ -1,1 +1,4 @@
 site_name: 普罗米修斯视觉用户手册
+
+nav:
+    - 'index': 'index.md'

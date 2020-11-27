@@ -1,28 +1,35 @@
 ## 简介
-  HoloCatchLightPlugin提供简单高效的体积视频解码，开发者可以利用HoloCatchLightPlugin在Unity3d中进行体积视频的解码预览与二次开发，
+  HoloCatchLightPlugin是一套强大的容积视频Unity插件，可以将我们提供的或者您手中的容积视频（将您的OBJ模型序列通过我们的工具转成通用格式）导入到Unity进行开发，并包含丰富且强大的二次开发能力，功能模块开源，您可根据自身需求自定义扩展，帮助您更快的将容积视频素材融入您的项目。
+
+  容积视频模型序列转换工具：https://holodata.s3.cn-northwest-1.amazonaws.com.cn/DownloadFile/Tools/ObjSeqConverter.zip
+
+  免费版目前只提供，最基本的播放功能，以及Windows和mac平台的支持
+  专业版提供各种高效实用的功能，以及包括移动平台的全平台支持
 
 ## 主要特性
 
 * 提供录播和实时直播的高性能解码能力
 * 可在编辑器模式预览
-* 全平台
-* 可通过Timeline控制（Pro版本）
+* 全平台(专业版)
+* 强大的Timeline辅助编辑功能(专业版)
+* 支持VFX特效(专业版)
+* 多种材质支持,支持替换颜色(专业版)
 
 ## 支持设备
 
 * Window
 * Mac
-* IOS
-* Android
-* Hololens
+* IOS(专业版)
+* Android(专业版)
+* Hololens(专业版)
 
 ## 开发环境要求
-    unity2018.4以上，建议unity2019.3及以上
+    unity2018.4以上，建议unity2019.3及以上，本工程包含Unity VFX特效,所以必须采用URP渲染管线,如何切换为URP渲染管线请参考Unity官方教程。
 
 ## 文件目录
     ├─Prometh 插件主要部分
     │  ├─Editor
-    │  │      MeshPlayerPluginEditor.cs 编辑器脚本，提供编辑器模式预览等功能
+    │  │      MeshPreviewPRMEditor.cs 编辑器脚本，提供编辑器模式预览等功能
     │  │
     │  ├─Plugins 各个平台的库
     │  │  ├─arm64-v8a 对应安卓64位平台
@@ -30,38 +37,53 @@
     │  │  ├─ios 对应ios平台
     │  │  ├─Mac 对应Mac平台
     │  │  ├─UWP 对应Hololens平台(UWP平台需要切换至对应平台，然后从压缩包中解压出目录中的插件)
-    │  │  └─x86_64 对应安卓64位平台
+    │  │  └─x86_64 对应windows64位平台
     │  │
     │  ├─Prefabs
     │  │  │  PromethCube.prefab 用来快速使用的预制体
     │  │  │
     │  │  └─Material
     │  │          Logo.png
-    │  │          MatPrometh.mat 预制体对应材质，需要使用Unlight
+    │  │          MatPrometh.mat 预制体对应材质
+    │  │
+    │  ├─RendererSetting  URP管线配置文件，可以根据需求自行替换
     │  │
     │  ├─Scripts
-    │  │      MeshPlayerPlugin.cs 插件C#主要逻辑部分
-    │  │      MeshReader.cs C#部分与底层API的中间层，封装成MeshData数据
-    │  │      ReaderAPI.cs 调用底层API的部分
-    │  │
+    │  │     插件C#主要逻辑部分
+    │  │     
     │  ├─Scenes
-    │  │      PromethLocal.unity 基本功能场景
-    │  └─StreamingAssets 首先要将这个文件夹移到根目录，视频文件要放在这里
-
+    │  │  ├─Basic 基本解码播放
+    │  │  ├─MaterialDemo 材质切换演示
+    │  │  ├─RepalceColorDemo 颜色替换演示
+    │  │  ├─TimelineDemo 时间线控制演示
+    │  │  └─VFXDemo VFX特效演示
+    │  │
+    │  └─StreamingAssets 首先要将这个文件夹移到根目录，容积视频文件要放在这里
 
 ## 快速入门
 首先将Prometh/StreamingAssets文件夹放到Assets根目录
-您可以直接运行Scene里面的Demo场景来快速使用，或者新建场景自行创建，首先将PromethCube拖进场景，将组件中的SourceType选择为PLAYBACK，SourcePath填入StreamingAssets文件夹下的路径，记得加上.mp4后缀，在StreamingAssets下文路径要勾选InStreamingAssets属性，编辑器下可以点击PreviewFrame进度条进行预览，SourceDurationSec，是当前模型的总时长，SpeedRatio为模型的播放速度。
+您可以直接运行Scene里面的Basic场景来快速使用，或者新建场景自行创建，首先将PromethCube拖进场景，将组件中的SourceType选择为PLAYBACK，SourcePath填入StreamingAssets文件夹下的路径，在StreamingAssets下文路径要勾选InStreamingAssets属性，编辑器下可以添加MeshPreviewPRM组件然后拖动进度条进行预览。
 
 ## API控制
-MeshPlayerPlugin提供出一些接口可以对视频播放进行控制
-* MeshPlayerPlugin.OpenSource(string str)  // 打开文件，参数为地址，StreamingAssets文件夹下的路径，否则为绝对路径
-* MeshPlayerPlugin.Play()  // 播放
-* MeshPlayerPlugin.Pause()  // 暂停
-* MeshPlayerPlugin.GotoSecond(float sec)  // 跳到多少秒
-* MeshPlayerPlugin.SpeedRatio //控制速度，播放前生效
+MeshPlayerPRM提供出一些接口可以对视频播放进行控制
+* MeshPlayerPRM.OpenSource(string url,float startTime, bool autoPlay) // 打开文件，参数为地址，开始时间，是否直接播放
+* MeshPlayerPRM.Play()  // 播放
+* MeshPlayerPRM.Pause()  // 暂停
+* MeshPlayerPRM.GotoSecond(float sec)  // 跳到多少秒
+* MeshPlayerPRM.SpeedRatio //控制速度，播放前生效
+
+## 扩展组件
+* MeshPreviewPRM  // 编辑器预览
+* MeshMaterialsPRM  // 材质替换
+* MeshTimelinePRM  // Timeline控制
+* MeshVfxPRM  // VFX特效
+
+## 提示 
+* MeshPlayerPRM的文件路径也可以填写硬盘上的绝对路径，需要取消勾选InStreamingAssets属性
+* 如果没有安装对应平台的支持（如android，ios），可能会在打包的时候导致插件重名冲突，可以将不需要的平台插件从你的工程中移除
+* 打包Ios到Xcode后，需要在UnityFramework中添加VideoToolBox.framework库，才能正常build到ios设备上
 
 ## 演示视频
-[![Unity3D Demo Video](imgs/07.png)](https://www.bilibili.com/video/BV1Dt4y1C7Qs)
+(https://www.bilibili.com/video/BV1Dt4y1C7Qs)
 
 * 您有什么疑问或者需求请联系技术支持: busiyg@163.com

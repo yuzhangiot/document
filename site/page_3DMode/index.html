@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Premiere 抠图使用教程 - 普罗米修斯视觉用户手册</title>
+        <title>page 3DMode - 普罗米修斯视觉用户手册</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -52,20 +52,8 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#premiere" class="nav-link">Premiere 抠图使用教程</a>
+            <li class="nav-item" data-level="2"><a href="#mode" class="nav-link">制作体积视频MODE教程</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">准备工作</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#1" class="nav-link">操作步骤1</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#2" class="nav-link">操作步骤2</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
         </ul>
@@ -73,48 +61,59 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="premiere">Premiere 抠图使用教程</h1>
-<p>本教程的作用是指导用户在录制视屏之后，容积视频重建之前，为了更好的得到Mask而采用的一种手动处理方式，使用工具为Premiere。</p>
-<h2 id="_1">准备工作</h2>
-<ul>
-<li>Premiere 软件</li>
-<li>每个相机的原始视频
-<img alt="image" src="../imgs/00.png" /></li>
-</ul>
-<h2 id="1">操作步骤1</h2>
-<pre><code>首先去掉绿幕部分
-</code></pre>
+<h2 id="mode">制作体积视频MODE教程</h2>
+<h4 id="mode_1">体积视频MODE简介</h4>
+<p>MODE在体积视频中人表现形式。我们在体积视频看到的内容，就是模型的序列（可以理解为3D的序列图）。</p>
+<h4 id="_1">体积视频常用模型制作软件</h4>
 <ul>
 <li>
-<p>首先，导入视频素材
-<img alt="image" src="../imgs/01.png" /></p>
+<p>MAYA </p>
 </li>
 <li>
-<p>然后，在菜单栏的窗口列表中看效果工具栏是否显示，如果没有，点击显示
-<img alt="image" src="../imgs/02.png" /></p>
+<p>3DSMAX </p>
 </li>
 <li>
-<p>在效果栏中找到<code>视频效果</code>&gt;<code>关键key</code>
-<img alt="image" src="../imgs/03.png" /></p>
-</li>
-<li>
-<p>在关键key中调整合适的参数，让mask看起来合理
-<img alt="image" src="../imgs/04.png" /></p>
+<p>ZBrush 等等</p>
 </li>
 </ul>
-<h2 id="2">操作步骤2</h2>
-<pre><code>接着是非绿幕部分，但是还是想去掉的部分
-</code></pre>
-<ul>
-<li>
-<p>在效果栏中找到<code>视频效果</code>&gt;<code>Alpha调整</code>
-<img alt="image" src="../imgs/05.png" /></p>
-</li>
-<li>
-<p>在Alpha调整中通过增加mask，来遮罩不需要的部分
-<img alt="image" src="../imgs/06.png" /></p>
-</li>
-</ul></div>
+<p>体积视频需要MODE格式为常用格式OBJ,我们以MAYA为例为大家介绍制作要点以及需要注意的地方。</p>
+<h4 id="_2">体积视频制作流程及要点</h4>
+<p>【一】导入文件</p>
+<p>打开软件后，导入OBJ格式文件（ 选择路径：file - import  - 选择文件路径）
+<img alt="" src="../imgs/page_3DMode/image003.png" /></p>
+<p>【二】制作模型</p>
+<p>1、以扫描模型T_POSE模型，创建Ploy模式 BASE模型，模型需要以4边面，模型必须是一个整体模型。</p>
+<p><img alt="" src="../imgs/page_3DMode/image004.jpg" />
+备注:Manifold，这也是最重要的。3D模型必须为manifold。如果一个网格模型中存在多个（3个或以上）面共一条边，那么它就是non-manifold，因为这个局部区域由于自相交而无法摊开展平为一个平面了。请看如图所示这个4个面共享一条边的non-manifold例子： </p>
+<p><img alt="" src="../imgs/page_3DMode/image002.jpg" /></p>
+<p>2、模型创建完成后，展开模型UV,展开方法根据模型材质类型和部位进行展开(UV分为：脸、头、头发、耳朵、手张和手指、手臂，衣服、裤子、腿、鞋子、口腔、牙齿)
+<img alt="" src="../imgs/page_3DMode/image005.jpg" />
+3、为模型赋予材质球，根据UV分开的部位，分别指定材质球
+<img alt="" src="../imgs/page_3DMode/image007.png" /></p>
+<p>4、模型制作完成后清理所有历史(edit - Delete by Type - History)
+清理完成后图4没有残留历史步骤,5的参数为初始值.
+<img alt="" src="../imgs/page_3DMode/image006.png" />
+5、模型导出设置(file - Export selection - 导出路径 - 导出命名 - 导出设置 - 确定导出)
+<img alt="" src="../imgs/page_3DMode/image008.png" />
+6、检查模型 需要用到 MeshLab 软件, 打开MeshLab软件(file  - import mesh - 选择刚才导出的OBJ - 点开no -manifvers和 no - manifedges - 查看左上角是否有non -manifold Edge 和 Vertices).如果有non -manaflod此软件会标记,返回MAYA中去修改,重复5`6确定无误模型制作完成.
+<img alt="" src="../imgs/page_3DMode/image009.png" /></p>
+<p>【三】拟合模型序列</p>
+<p>需要 Wrap 软件工具</p>
+<p>1、打开Wrap 导入MAYA中制作完成人MODE  (load - 命名 - 加载 - 选择文件 - 导入) 
+<img alt="" src="../imgs/page_3DMode/image010.png" />
+<img alt="" src="../imgs/page_3DMode/image011.png" />
+2、同1导入模型序列
+<img alt="" src="../imgs/page_3DMode/image012.png" />
+3、右击创建SelectPiontPairs,选择此节点，进入VisualEditor界面进行MOSDE和序列模型标定关键位置点。
+<img alt="" src="../imgs/page_3DMode/image013.png" />
+4、右击创建SelectPolygons，选择节点同样进入Editor界面，选择不需要参与结算人面！
+<img alt="" src="../imgs/page_3DMode/image014.png" />
+5、同上操作创建Wrapping，以上步骤完成后，点击Copute结算。
+<img alt="" src="../imgs/page_3DMode/image015.png" /> 
+6、贴图拟合优化制作，将SaveImage在PS软件里进行精致优化，最后SetImage给MODE。
+<img alt="" src="../imgs/page_3DMode/image016.png" />
+<img alt="" src="../imgs/page_3DMode/image017.png" /> <br />
+整个体积视频MODE制作完成。</p></div>
             </div>
         </div>
 
